@@ -1,12 +1,12 @@
 <%@page import="javax.persistence.Tuple"%>
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,7 +16,7 @@ if (session.getAttribute("renderizarVista") == "index") {
 	List<Object[]> productos = (List<Object[]>)session.getAttribute("productos");
 %>
 <h1>FindAllFK</h1>
-	<h3>Permite buscar uno o varios registros en base a una condición, pero cambiando la clave foranea (Mostrar otra columna de la tabla agena, en lugar de su clave primaria), si no se entregan parámetros al método se muestran las claves primarias por defecto</h3>
+	<h3>Permite buscar uno o varios registros en base a una condiciÃ³n, pero cambiando la clave foranea (Mostrar otra columna de la tabla agena, en lugar de su clave primaria), si no se entregan parÃ¡metros al mÃ©todo se muestran las claves primarias por defecto</h3>
 	
 	<form action="ProductoControlador" method="GET">
 		<label for="columnaCategoria">Columna Tabla Categoria</label>
@@ -33,7 +33,7 @@ if (session.getAttribute("renderizarVista") == "index") {
 		</select>
 		<label for="valor">Valor</label>
 		<input type="text" name="valor" required/>
-		<button name="opcion" value="1">Ejecutar Método</button>
+		<button name="opcion" value="1">Ejecutar MÃ©todo</button>
 	</form>
 	
     <table border="1">
