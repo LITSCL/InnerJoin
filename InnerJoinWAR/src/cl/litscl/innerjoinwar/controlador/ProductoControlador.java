@@ -37,14 +37,14 @@ public class ProductoControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet: Se debe utilizar para renderizar vistas y controlar datos que llegan desde la URL.
 		
-		//1. Crear una sesiÛn.
+		//1. Crear una sesi√≥n.
 		HttpSession sesion = request.getSession(false);
 		
-		//2. recibir los par·metros.
+		//2. recibir los par√°metros.
 		String vista = request.getParameter("vista");
 		String opcion = request.getParameter("opcion");
 		
-		//3. Verificar si llegan los par·metros (Switch no puede recibir datos "null").
+		//3. Verificar si llegan los par√°metros (Switch no puede recibir datos "null").
 		if (vista == null) {
 			vista = "";
 		}
