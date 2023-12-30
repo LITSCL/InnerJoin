@@ -54,14 +54,14 @@ public class ProductoControlador extends HttpServlet {
 		
 		//4. Revisar que vista se desea renderizar.
 		switch (vista) { //NOTA: Este Switch es para renderiza vistas.
-		case "index":	
-			sesion.setAttribute("productos", daoProducto.findAllFK("nombre", "categoriaFK", "2"));
-			
-			sesion.setAttribute("renderizarVista", "index");
-			response.sendRedirect(request.getContextPath());
-			break;
-		default:
-			break;
+			case "index":	
+				sesion.setAttribute("productos", daoProducto.findAllFK("nombre", "categoriaFK", "2"));
+				
+				sesion.setAttribute("renderizarVista", "index");
+				response.sendRedirect(request.getContextPath());
+				break;
+			default:
+				break;
 		}
 		
 		switch (opcion) { //NOTA: Este Switch es para controlar datos que llegan desde la URL.
