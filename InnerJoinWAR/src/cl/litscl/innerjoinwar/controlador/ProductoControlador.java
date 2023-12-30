@@ -35,7 +35,7 @@ public class ProductoControlador extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet: Se debe utilizar para renderizar vistas y controlar datos que llegan desde la URL.
+		//NOTA: El método "doGet" se debe utilizar para renderizar vistas y controlar datos que llegan desde la URL.
 		
 		//1. Crear una sesión.
 		HttpSession sesion = request.getSession(false);
@@ -65,22 +65,22 @@ public class ProductoControlador extends HttpServlet {
 		}
 		
 		switch (opcion) { //NOTA: Este Switch es para controlar datos que llegan desde la URL.
-		case "1": //Renderizar tabla.
-			String columnaCategoria = request.getParameter("columnaCategoria");
-			String columna = request.getParameter("columna");
-			String valor = request.getParameter("valor");
-			
-			if (columnaCategoria.isEmpty()) {
-				columnaCategoria = null;
-			}
-			
-			sesion.setAttribute("productos", daoProducto.findAllFK(columnaCategoria, columna, valor));
-			
-			sesion.setAttribute("renderizarVista", "index");
-			response.sendRedirect(request.getContextPath());
-			break;
-		default:
-			break;
+			case "1": //Renderizar tabla.
+				String columnaCategoria = request.getParameter("columnaCategoria");
+				String columna = request.getParameter("columna");
+				String valor = request.getParameter("valor");
+				
+				if (columnaCategoria.isEmpty()) {
+					columnaCategoria = null;
+				}
+				
+				sesion.setAttribute("productos", daoProducto.findAllFK(columnaCategoria, columna, valor));
+				
+				sesion.setAttribute("renderizarVista", "index");
+				response.sendRedirect(request.getContextPath());
+				break;
+			default:
+				break;
 		}
 	}
 
